@@ -3,7 +3,6 @@ jQuery(function ($) {
     let todoList = $('.todoes');
     let input = $('.add-todo');
     let add = $('.add');
-    let text = $('.info')
 
     function newTodo (value) {
         todoes.push (value);
@@ -60,10 +59,9 @@ jQuery(function ($) {
     });
 
     $('#todo').on('click', '.edit', function(){
-        $(this).siblings(text).prop('contenteditable', true);
-        $(this).sublings(text).on('change'), function f() {
-            text.prop('contenteditable', false);
-            console.log(text);
+        $(this).siblings(".info").prop('contenteditable', true);
+        $(this).siblings(".info").on('change'), function f() {
+            $('.info').prop('contenteditable', false);
         }
     });
 
