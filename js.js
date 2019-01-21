@@ -16,9 +16,11 @@ jQuery(function ($) {
             <li>
                 <p class="info">${this}</p>
                 <button class="delete" data-index="${i}">delete</button>  
+                <div>
                   <input type="checkbox" class="check" data-index="${i}">
                   <div  class="done" data-index="${i}" hidden>
                       <i class="fas fa-check"></i>
+                  </div>
                   </div>
                 <button class="edit">Edit</button>
             </li>
@@ -31,14 +33,6 @@ jQuery(function ($) {
         renderTodo();
     }
 
-    function endEditing () {
-        $('#todo').on('keydown', text, function (e) {
-            if (e.keyCode == 13)  {
-                $(this).prop('contenteditable', false);
-            }
-
-        });
-    }
 
 
     input.on('keydown', function (e) {
@@ -62,13 +56,14 @@ jQuery(function ($) {
 
     $('#todo').on('click', '.check', function () {
         $(this).prop('hidden', true);
-        $(this).siblings(".done").data('index').prop('hidden', false);
+        $(this).siblings().prop('hidden', false);
     });
 
     $('#todo').on('click', '.edit', function(){
         $(this).siblings(text).prop('contenteditable', true);
-        text.on('change'), function () {
-            text.prop(;)
+        $(this).sublings(text).on('change'), function f() {
+            text.prop('contenteditable', false);
+            console.log(text);
         }
     });
 
